@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Prototype Affiliate Marketing Phase 2 trên Sale Platform" />
+  <title>AM Phase 2 · Sale Platform</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23365ff6'/%3E%3Cpath d='M18 33h28M23 22l-11 11 11 11M41 22l11 11-11 11' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">∞</span><span><b>SALE</b><small>PLATFORM</small></span></div>
+    <div class="crumb">Affiliate Marketing <span>›</span> <strong id="crumb-current">Dashboard</strong></div>
+    <div class="top-actions">
+      <button class="icon-btn" aria-label="Tìm kiếm">⌕</button><button class="icon-btn" aria-label="Khách hàng">♙</button><button class="icon-btn" aria-label="Cuộc gọi">⌕</button><button class="icon-btn" aria-label="Hội thoại">◌</button>
+      <button class="icon-btn" aria-label="Thông báo">♢<span class="notif">3</span></button>
+      <span class="online"><i></i> Đang trực tuyến</span>
+      <div class="user"><span class="avatar">NQ</span><span><b>Nguyễn Thành Quang</b><small id="role-label">Salesman · HCM 01</small></span></div>
+      <select id="role-switch" aria-label="Chuyển vai trò"><option value="sales">Salesman</option><option value="manager">TPKD / FCM</option></select>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <nav>
+        <button class="nav-item muted-nav"><span>⌂</span> Trang chủ</button><button class="nav-item muted-nav"><span>▢</span> Hội thoại</button>
+        <div class="nav-group-title"><span>⌁</span> Affiliate Marketing <b>⌃</b></div>
+        <button data-view="campaigns" class="nav-item sub-item active"><span></span> Cá nhân</button>
+        <button class="nav-item muted-nav"><span>▤</span> Quản lý bài viết <b>⌄</b></button><button class="nav-item muted-nav"><span>◎</span> Thiết lập website</button><button class="nav-item muted-nav"><span>⌕</span> Quản lý cuộc gọi <b>⌄</b></button><button class="nav-item muted-nav"><span>♙</span> Quản lý khách hàng <b>⌄</b></button>
+        <button class="nav-item muted-nav"><span>♙</span> Sàn điểm - Đổi quà <b>⌄</b></button><button class="nav-item muted-nav"><span>⚙</span> Cấu hình hệ thống</button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="admin-switch"><i></i> Trang quản trị</div>
+        <button id="guide-btn" class="nav-item"><span>?</span> Hướng dẫn sử dụng</button>
+        <button class="nav-item"><span>☰</span> Thu gọn</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section id="view-dashboard" class="view active">
+        <div class="personal-head"><h1>Cá nhân</h1><div class="tabs"><button class="tab" data-open-tab="campaign-list">Danh sách chiến dịch</button><button class="tab active">Báo cáo</button><button class="tab" data-open-tab="custom-links">Link tôi tạo</button><button class="tab" data-open-tab="voucher-catalog">Voucher áp dụng</button></div></div>
+        <div class="page-head">
+          <div><h1>Dashboard hiệu suất AM</h1><p id="dashboard-scope">Hiệu suất cá nhân trong kỳ đang chọn</p></div>
+          <span class="sync">● Dữ liệu cập nhật 09:42 · 07/10/2026</span>
+        </div>
+        <div class="report-day-strip"><button class="report-day active"><small>KỲ REPORT</small><b>Ngày 6</b><span>06/10/2026 · Thứ ba</span></button><button class="report-day"><small>BẮT ĐẦU TRACKING</small><b>Ngày 1 · 01/10/2026</b><span>6 ngày có dữ liệu trước</span></button><button class="report-day"><small>TRAFFIC (click)</small><b>12.245</b><span>Daily Traffic · 06/10/2026</span></button><button class="report-day"><small>LEADS / ĐƠN ĐẾN</small><b>1.595 / 148</b><span>Lũy kế đến 06/10</span></button><button class="report-day"><small>LANDING PAGE</small><b>fpt.vn/bang-gia-goi-cuoc</b><span>UTM: source=amtracking</span></button><button class="report-day"><small>DỮ LIỆU NGÀY 6</small><b>2.209 link · 655 click mới</b><span>Cục bộ 7 ngày gần nhất</span></button></div>
+        <div class="report-day-history"><button>Ngày 1 · 01/10 <b>3.818 click · 1.651 link</b></button><button>Ngày 2 · 02/10 <b>1.121 click · 1.497 link</b></button><button>Ngày 3 · 03/10 <b>1.686 click · 2.079 link</b></button><button>Ngày 4 · 04/10 <b>932 click · 2.319 link</b></button><button>Ngày 5 · 05/10 <b>1.164 click · 2.208 link</b></button><button class="active">Ngày 6 · 06/10 <b>655 click · 2.209 link</b></button></div>
+        <div class="report-tabs"><button class="active">Tổng hợp</button><button>Leads &amp; Đơn</button><button>Traffic (click)</button></div>
+        <div class="filterbar">
+          <label>Kỳ báo cáo<select id="period-filter"><option>01/10/2026 – 07/10/2026</option><option>Tháng 09/2026</option><option>Quý III/2026</option></select></label>
+          <label class="manager-only">Đơn vị<select><option>Tất cả đơn vị</option><option>HCM 01</option><option>HCM 03</option></select></label>
+          <label class="manager-only">Sales<select><option>Tất cả Sales</option><option>Nguyễn Thành Quang</option><option>Trần Mai Linh</option></select></label>
+          <label>Loại Link<select id="link-filter"><option>Tất cả Link AM</option><option>Campaign Link</option><option>Custom Link</option></select></label>
+          <label>Location<select><option>Tất cả khu vực</option><option>TP. Hồ Chí Minh</option><option>Hà Nội</option></select></label>
+          <button class="btn secondary" id="refresh-btn">Làm mới</button>
+        </div>
+        <div class="kpi-grid" id="kpi-grid"></div>
+        <div class="dashboard-grid">
+          <article class="card ranking-card"><div class="card-head"><div><h2>Top 10 Sales theo traffic</h2><p>Xếp theo click hợp lệ cao nhất</p></div></div><div id="sales-ranking" class="hbar-chart"></div></article>
+          <article class="card ranking-card"><div class="card-head"><div><h2>Top 10 chiến dịch theo leads / đơn</h2><p>Không gồm đơn trùng lọc</p></div><div class="mini-toggle"><button class="active">Đơn</button><button>Leads</button></div></div><div id="campaign-ranking" class="hbar-chart orange"></div></article>
+          <article class="card chart-card wide">
+            <div class="card-head"><div><h2>Xu hướng hiệu suất</h2><p>Click, Unique Users, Lead và Đơn theo ngày</p></div><div class="legend"><i class="blue"></i>Click <i class="cyan"></i>Unique <i class="orange"></i>Lead <i class="green"></i>Đơn</div></div>
+            <div class="trend-chart" id="trend-chart"></div>
+          </article>
+          <article class="card funnel-card">
+            <div class="card-head"><div><h2>Phễu chuyển đổi</h2><p>Từ truy cập đến hoàn tất</p></div></div>
+            <div id="funnel"></div>
+          </article>
+          <article class="card status-card">
+            <div class="card-head"><div><h2>Cơ cấu trạng thái đơn</h2><p>42 đơn trong kỳ</p></div></div>
+            <div class="donut-wrap"><div class="donut"><b>42</b><span>đơn hàng</span></div><ul id="order-status-list"></ul></div>
+          </article>
+          <article class="card wide">
+            <div class="card-head"><div><h2>Hiệu quả Chiến dịch / Custom Link</h2><p>So sánh nguồn tạo chuyển đổi</p></div><button class="text-btn" data-view-link="campaigns">Xem chi tiết</button></div>
+            <div class="table-wrap"><table><thead><tr><th>Nguồn</th><th>Loại</th><th>Click</th><th>Unique</th><th>Lead</th><th>Đơn</th><th>CR tạo đơn</th></tr></thead><tbody id="source-performance"></tbody></table></div>
+          </article>
+          <article class="card manager-only">
+            <div class="card-head"><div><h2>Sales cần hỗ trợ</h2><p>Chưa có click hợp lệ trong kỳ</p></div></div>
+            <div id="inactive-sales" class="people-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="view-campaigns" class="view">
+        <div class="page-head"><div><h1>Cá nhân</h1><p>Quản lý Campaign Link và Custom Link của bạn</p></div></div>
+        <div class="tabs"><button class="tab active" data-tab="campaign-list">Danh sách chiến dịch</button><button class="tab" data-view-link="dashboard">Báo cáo</button><button class="tab" data-tab="custom-links">Link tôi tạo</button><button class="tab" data-tab="voucher-catalog">Voucher áp dụng</button></div>
+        <div id="tab-campaign-list" class="tab-panel active">
+          <div class="toolbar"><div class="search">⌕ <input id="campaign-search" placeholder="Tìm theo tên chiến dịch" /></div><span class="muted">6 chiến dịch được cấp theo phạm vi</span></div>
+          <div class="card table-card"><table><thead><tr><th>STT</th><th>Chiến dịch</th><th class="right">Thao tác</th></tr></thead><tbody id="campaign-table"></tbody></table></div>
+        </div>
+        <div id="tab-custom-links" class="tab-panel">
+          <div class="toolbar"><div class="toolbar-left"><button class="btn secondary">☷ Bộ lọc</button><div class="search">⌕ <input id="link-search" placeholder="Tìm theo tên link" /></div></div><button class="btn primary" id="create-link-btn">＋ Tạo link</button></div>
+          <div class="card table-card"><table><thead><tr><th>Tên link</th><th>URL / Gói dịch vụ</th><th>Location</th><th>Ngày sửa</th><th class="right">Thao tác</th></tr></thead><tbody id="custom-link-table"></tbody></table></div>
+        </div>
+        <div id="tab-voucher-catalog" class="tab-panel">
+          <div class="voucher-page-head"><div><h2>Danh sách voucher được áp dụng</h2><p>Xem trước voucher và số lượt có thể áp dụng trên từng Link AM để chủ động tư vấn khách hàng.</p></div><div class="voucher-totals"><span><b>4</b> voucher được cấp</span><span><b>25</b> lượt có thể áp dụng</span><span><b>2</b> link đang dùng</span></div></div>
+          <div class="filterbar"><label>Chiến dịch / Link<select id="voucher-link-filter"><option value="all">Tất cả Link AM</option><option value="c2">Tạo Menu cá nhân hóa đến Khách hàng</option><option value="c3">Danh sách gói tổng hợp</option><option value="l1">Internet Quận 7</option></select></label><label>Trạng thái<select><option>Tất cả</option><option>Có thể áp dụng</option><option>Sắp hết lượt</option><option>Không khả dụng</option></select></label><div class="search grow">⌕ <input placeholder="Tìm mã voucher" /></div></div>
+          <div id="voucher-catalog-grid" class="voucher-grid voucher-catalog-grid"></div>
+          <div class="info-callout">Số lượt hiển thị là dữ liệu hỗ trợ tư vấn tại thời điểm gần nhất. Điều kiện và hạn mức cuối cùng vẫn được đối soát khi khách xác nhận đăng ký.</div>
+        </div>
+      </section>
+
+      <section id="view-campaign-config" class="view">
+        <div class="back-row"><button class="back-btn" data-back="campaigns">←</button><div><h1 id="config-title">Cấu hình chiến dịch</h1><p id="config-link-meta">Campaign Link cá nhân · fpt.vn/am/quangth11</p></div></div>
+        <form id="campaign-config-form" class="config-stack">
+          <article class="card form-card"><div class="card-head"><div><h2>1. Khu vực áp dụng</h2><p>Giá và gói cước được kiểm tra theo địa chỉ này</p></div></div><div class="form-grid two"><label>Tỉnh/Thành phố *<select id="campaign-province" required><option>TP. Hồ Chí Minh</option><option>Hà Nội</option></select></label><label>Phường/Xã *<select id="campaign-ward" required><option>Phường Bình Trị Đông</option><option>Phường An Lạc</option><option>Phường Tân Thuận</option></select></label></div><fieldset class="property-type"><legend>* Chọn loại hình nhà muốn bán</legend><label><input type="radio" name="campaign-property-type" value="Nhà mặt đất (Nhà riêng/Nhà phố)" checked /> Nhà mặt đất (Nhà riêng/Nhà phố)</label><label><input type="radio" name="campaign-property-type" value="Căn hộ chung cư" /> Căn hộ chung cư</label></fieldset><label id="campaign-building-field" class="building-field hidden">Chọn chung cư phù hợp *<select id="campaign-building"><option value="">Chọn chung cư</option></select><small>Danh sách được lọc theo Phường/Xã đã chọn.</small></label></article>
+          <div id="product-groups"></div>
+          <article class="card form-card"><div class="card-head"><div><h2>5. Kho Banner</h2><p>Chọn một banner do Admin cấp; không bắt buộc khi lưu</p></div><label class="switch"><input id="banner-visible" type="checkbox" checked /><span></span></label></div><div class="banner-picker"><div class="banner-preview"><div id="campaign-banner-preview" class="banner-art image-banner"><img src="assets/packages/combo-sky.png" alt=""/><div><span>FPT PLAY</span><b>TRẢI NGHIỆM CHẤT LƯỢNG 4K</b><small>CÙNG NGOẠI HẠNG ANH</small></div></div></div><div><b id="banner-name">Ngoại hạng Anh 4K</b><p>Desktop 1600×480 · Mobile 720×600</p><div id="banner-options" class="banner-options"><button type="button" data-banner="sports"><img src="assets/packages/combo-sky.png" alt=""/><span>Thể thao 4K</span></button><button type="button" data-banner="internet"><img src="assets/packages/internet-giga.png" alt=""/><span>Internet Giga</span></button><button type="button" data-banner="camera"><img src="assets/packages/camera.png" alt=""/><span>Camera an tâm</span></button></div></div></div></article>
+          <article class="card form-card"><div class="card-head"><div><h2>6. Voucher</h2><p>Sales chỉ bật/tắt voucher Admin đã cấp</p></div><label class="switch"><input id="voucher-master" type="checkbox" checked /><span></span></label></div><div id="voucher-list" class="voucher-grid"></div><div class="info-callout">Hạn mức được đối soát qua API ngoài tại Checkout. AM không hiển thị hoặc quản lý số dư.</div></article>
+          <div class="sticky-save"><span>Chỉnh sửa lần cuối: 15:19 06/10/2026</span><button class="btn primary" type="submit">Lưu thông tin</button></div>
+        </form>
+      </section>
+
+      <section id="view-campaign-detail" class="view">
+        <div class="back-row entity-back"><button class="back-btn" data-back="campaigns">←</button><div><h1>Chi tiết chiến dịch</h1></div></div>
+        <article class="entity-header card">
+          <span id="campaign-detail-avatar" class="link-avatar large orange">CS</span>
+          <h1 id="campaign-detail-name">Gói combo thể thao Sky</h1>
+          <button class="btn secondary" id="open-campaign-config">✎ Cấu hình chiến dịch</button>
+        </article>
+        <div class="tabs campaign-detail-tabs"><button class="tab active" data-campaign-section="overview">Tổng quan</button><button class="tab" data-campaign-section="vouchers">Voucher áp dụng</button><button class="tab" data-campaign-section="guide">Hướng dẫn sử dụng</button></div>
+        <div id="campaign-section-overview" class="campaign-section active"><h2 class="section-title">Hiệu quả chiến dịch</h2><div class="kpi-grid compact" id="campaign-detail-kpis"></div><div class="campaign-link-only single">
+          <article class="card form-card"><h2>Thông tin Campaign Link</h2><p class="muted">Campaign Link dùng cấu hình chiến dịch; không hiển thị danh sách sản phẩm riêng tại màn chi tiết.</p><label>SHORTLINK</label><div class="shortlink-box"><code id="campaign-detail-shortlink">https://fpt.vn/linhdcc</code><button class="btn secondary" data-copy="https://fpt.vn/linhdcc">Sao chép</button></div><label>MÃ QR</label><div class="qr-code" aria-label="Mã QR chiến dịch"></div><button class="btn secondary full" id="campaign-detail-open">↗ Mở Campaign Link</button></article>
+        </div></div>
+        <div id="campaign-section-vouchers" class="campaign-section"><div class="voucher-summary card"><div><span>Voucher có thể tư vấn</span><b id="usable-voucher-count">2/4</b><small>Đã kiểm tra điều kiện chiến dịch; hạn mức cuối cùng được đối soát tại Checkout.</small></div><div><span>Cần lưu ý</span><b>1 sắp hết hạn</b><small>Ưu tiên sử dụng voucher phù hợp trước ngày hết hiệu lực.</small></div></div><div id="campaign-voucher-catalog" class="voucher-grid detail-vouchers"></div></div>
+        <div id="campaign-section-guide" class="campaign-section"><article class="card form-card campaign-guide"><div class="card-head"><div><h2 id="campaign-guide-title">Mục tiêu & hướng dẫn sử dụng</h2><p>Đọc nhanh trước khi tạo hoặc chia sẻ link để tránh chọn sai loại Menu.</p></div><span class="badge">Bắt buộc đọc</span></div><div class="guide-audience"><b>Dùng chiến dịch này khi</b><p id="campaign-guide-purpose"></p></div><div class="guide-warning"><b>Không dùng khi</b><p id="campaign-guide-avoid"></p></div><ol id="campaign-guide-steps"></ol><div id="campaign-guide-pending" class="pending-note hidden"></div><button class="btn primary" id="campaign-guide-open">Xem hướng dẫn dạng pop-up</button></article></div>
+      </section>
+
+      <section id="view-custom-link-form" class="view">
+        <div class="back-row"><button class="back-btn" data-back="campaigns">←</button><div><h1 id="link-form-title">Tạo link</h1><p>URL-first · Shortlink và QR giữ nguyên sau khi tạo</p></div></div>
+        <form id="custom-link-form" class="split-form">
+          <div class="form-column">
+          <article class="card form-card"><h2>Thông tin cơ bản</h2><label>Tên link *<input id="link-name" required minlength="5" maxlength="100" placeholder="Ví dụ: Internet Quận 7" /></label><label>Avatar link<div id="avatar-picker" class="avatar-picker"></div></label></article>
+          <article class="card form-card"><h2>Thông tin link</h2><div class="form-tabs"><button type="button" class="form-tab active">URL đích</button><button type="button" class="form-tab" disabled>Chọn từ danh sách <small>Khả dụng sau khi tạo</small></button></div><div class="url-create-panel"><label>URL đích *<input id="destination-url" required type="url" placeholder="https://fpt.vn/..." /></label><p class="field-help">Chỉ chấp nhận HTTPS thuộc fpt.vn. Sau khi tạo, dùng “Chỉnh sửa” để cấu hình tối đa 3 sản phẩm/dịch vụ theo khu vực.</p><div id="link-validation" class="validation-box hidden"></div></div></article>
+            <button class="btn primary full" type="submit">Tạo link</button>
+          </div>
+          <article class="card form-card preview-column"><h2>Xem trước link</h2><label>Shortlink<input disabled placeholder="Shortlink sẽ hiển thị sau khi tạo link" /></label><label>Mã QR</label><div class="qr-placeholder"><span>⌗</span><p>Mã QR được tạo cùng Shortlink</p></div></article>
+        </form>
+      </section>
+
+      <section id="view-custom-link-detail" class="view">
+        <div class="back-row entity-back"><button class="back-btn" data-back="campaigns">←</button><div><h1>Chi tiết link</h1></div></div>
+        <article class="entity-header card"><span id="detail-avatar" class="link-avatar large">IQ</span><h1 id="detail-name">Internet Quận 7</h1><div class="entity-meta">Ngày tạo: <b>05/10/2026</b><span></span>Ngày cập nhật: <b>07/10/2026</b></div><button class="btn secondary" id="edit-custom-link">✎ Chỉnh sửa</button></article>
+        <div class="kpi-grid compact" id="link-kpis"></div>
+        <div class="detail-grid">
+          <article class="card form-card"><div class="card-head"><div><h2>Thông tin Link AM</h2><p>Định danh không thay đổi khi chỉnh cấu hình</p></div></div><div class="shortlink-box"><code id="detail-shortlink">fpt.vn/s/q7-net</code><button class="btn secondary" data-copy="fpt.vn/s/q7-net">Sao chép</button></div><div class="qr-code" aria-label="Mã QR mô phỏng"></div><button class="btn secondary full" id="download-qr">↓ Tải mã QR</button></article>
+          <article class="card form-card"><div class="card-head"><div><h2>Sản phẩm dịch vụ</h2><p id="detail-location">TP. Hồ Chí Minh · Phường Tân Phú</p></div><span class="badge" id="package-count">2 gói</span></div><div id="detail-packages" class="package-list"></div></article>
+        </div>
+      </section>
+
+      <section id="view-custom-link-edit" class="view">
+        <div class="back-row"><button class="back-btn" data-back="custom-link-detail">←</button><div><h1>Chỉnh sửa Custom Link</h1><p>Giữ nguyên URL đích, Shortlink và QR</p></div></div>
+        <form id="custom-link-edit-form" class="config-stack">
+          <article class="card form-card"><h2>Thông tin cơ bản</h2><div class="form-grid two"><label>Tên link *<input id="edit-link-name" value="Internet Quận 7" /></label><label>URL đích 🔒<input id="edit-link-url" value="https://fpt.vn/internet" disabled /></label></div><div class="identity-note">Shortlink và QR đã phát hành được giữ nguyên khi chỉnh sửa.</div></article>
+          <article class="card form-card"><h2>Khu vực</h2><div class="form-grid two"><label>Tỉnh/Thành phố *<select id="edit-province"><option>TP. Hồ Chí Minh</option><option>Hà Nội</option></select></label><label>Phường/Xã *<select id="edit-ward"><option>Phường Tân Phú</option><option>Phường Bình Trị Đông</option></select></label></div><fieldset class="property-type"><legend>* Chọn loại hình nhà muốn bán</legend><label><input type="radio" name="property-type" value="Nhà mặt đất (Nhà riêng/Nhà phố)" checked /> Nhà mặt đất (Nhà riêng/Nhà phố)</label><label><input type="radio" name="property-type" value="Căn hộ chung cư" /> Căn hộ chung cư</label></fieldset></article>
+          <article class="card form-card"><div class="card-head"><div><h2>Chọn sản phẩm/dịch vụ</h2><p>Chọn tối đa 3 gói theo khu vực; kéo bằng tay cầm để hình dung thứ tự ưu tiên</p></div><span class="counter" id="custom-package-counter">2/3 gói</span></div><div id="product-catalog" class="product-catalog"></div><div class="selected-label">Đã chọn</div><div id="edit-packages" class="package-list editable"></div></article>
+          <div class="sticky-save"><span>Thay đổi không làm đổi định danh Link</span><button type="button" class="btn secondary" data-back="custom-link-detail">Hủy</button><button class="btn primary" type="submit">Lưu thay đổi</button></div>
+        </form>
+      </section>
+
+      <section id="view-landing" class="view landing-view">
+        <div class="landing-top"><div class="fpt-logo">FPT Telecom</div><div>Hỗ trợ bởi <b>Nguyễn Thành Quang</b> · 0901 234 567</div></div>
+        <div class="landing-hero"><div><span class="eyebrow">INTERNET FPT</span><h1>Kết nối mạnh mẽ<br/>cho mọi khoảnh khắc</h1><p>Gói cước phù hợp tại TP. Hồ Chí Minh với ưu đãi dành riêng từ tư vấn viên.</p><button class="btn light" id="scroll-packages">Khám phá gói cước</button></div><div class="hero-orbit"><b>1 Gbps</b><span>Tốc độ tối đa</span></div></div>
+        <div class="landing-content"><h2>Gói cước nổi bật</h2><div id="landing-packages" class="landing-packages"></div><div id="landing-vouchers" class="landing-vouchers"></div></div>
+      </section>
+
+      <section id="view-checkout" class="view checkout-view">
+        <div class="back-row"><button class="back-btn" data-back="landing">←</button><div><h1>Đăng ký dịch vụ</h1><p>Thông tin đơn hàng được ghi nhận qua Link AM</p></div></div>
+        <div class="checkout-grid"><form id="checkout-form" class="card form-card"><h2>Thông tin khách hàng</h2><div class="form-grid two"><label>Họ và tên *<input required value="Trần Minh Anh" /></label><label>Số điện thoại *<input required value="0912345678" /></label></div><label>Địa chỉ lắp đặt *<input required value="72 Nguyễn Thị Thập, Phường Tân Phú, TP.HCM" /></label><h2>Voucher khả dụng</h2><div id="checkout-vouchers" class="voucher-select"></div><div class="info-callout" id="quota-note">Đã đối soát hạn mức lúc 09:43. Chỉ voucher đủ điều kiện được hiển thị.</div></form><aside class="card order-summary"><h2>Đơn hàng</h2><div id="summary-package"></div><div class="summary-line"><span>Giá gói</span><b id="base-price">300.000đ</b></div><div class="summary-line discount"><span>Ưu đãi</span><b id="discount">−100.000đ</b></div><div class="summary-line total"><span>Tạm tính</span><b id="total-price">200.000đ</b></div><button class="btn primary full" id="submit-order">Xác nhận đăng ký</button><p>Sales hỗ trợ: Nguyễn Thành Quang · 0901 234 567</p></aside></div>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="modal-root" class="modal-root hidden" role="dialog" aria-modal="true"><div class="modal"><div class="modal-head"><div><h2 id="modal-title"></h2><p id="modal-subtitle"></p></div><button id="modal-close" class="icon-btn">×</button></div><div id="modal-body"></div></div></div>
+  <div id="toast" class="toast hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
